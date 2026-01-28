@@ -18,7 +18,7 @@ SortBy              = "default"
     lastUpdated = ":date_full"
 
 [sidebar]
-    emoji    = "🚀"
+    emoji    = "x"
     subtitle = "A public dumping ground for my obsession with Local LLMs, abandonware, and voiding warranties."
     avatar   = "img/avatar.png"
 

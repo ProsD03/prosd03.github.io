@@ -114,3 +114,34 @@ body {
 .article-content a {
     color: var(--color-primary) !important;
 }
+
+/* =========================================
+   9. SIDEBAR FAVICON FIX
+   ========================================= */
+/* Target the container that holds the emoji/image */
+.sidebar .avatar-container .emoji {
+    /* Reset text properties so they don't affect the image space */
+    font-size: 0 !important;
+    line-height: 0 !important;
+
+    /* Remove padding so the image touches the edges */
+    padding: 0 !important;
+
+    /* Ensure the container clips the image into a perfect circle */
+    overflow: hidden !important;
+    border-radius: 50% !important;
+
+    /* Optional: If your favicon has a transparent background,
+       you might want to keep the dark background circle.
+       If the favicon is a solid square, remove the line below. */
+    background-color: rgba(44, 38, 32, 0.90) !important;
+}
+
+/* Target the image itself to ensure it fills the container */
+.sidebar .avatar-container .emoji img {
+    /* Already set inline in config, but good to double-force here */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
