@@ -1,3 +1,116 @@
-/*
-    You can add your own custom styles here.
-*/
+/* =========================================
+   1. GLOBAL FORCED DARK MODE
+   ========================================= */
+:root, [data-scheme="light"], [data-scheme="dark"] {
+    --color-primary: #ff7b00 !important;       
+    --color-primary-rgb: 255, 123, 0 !important;
+    
+    /* Dark Coffee/Warm Grey Card Background */
+    --card-bg: rgba(44, 38, 32, 0.85) !important;
+    --card-border: rgba(255, 255, 255, 0.1) !important;
+    --text-main: #f0ead6 !important; /* Cream Text */
+    --menu-text-static: #f0ead6 !important;
+}
+
+/* =========================================
+   2. THE BACKGROUND (Deep Space)
+   ========================================= */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: url('/background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px) brightness(0.5);
+    transform: scale(1.05); 
+}
+
+body {
+    background: transparent !important;
+}
+
+/* =========================================
+   3. THE CARDS (Frosted Glass)
+   ========================================= */
+.widget, 
+.article-list article,          
+.article-list--compact article, 
+.main-article,                  
+.right-sidebar .widget {
+    background-color: var(--card-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--card-border) !important;
+    padding: 30px !important;
+    border-radius: 16px !important;
+    color: var(--text-main) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* =========================================
+   3.5 IMAGE FIX (The "Square" Killer)
+   ========================================= */
+/* We target the .article-image DIV specifically */
+.article-image {
+    /* Force the container to respect the rounded corners */
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    
+    /* If the theme forces negative margins (to touch the edges), 
+       we keep them but ensure the radius applies to the result */
+    z-index: 1; 
+}
+
+/* We also force the IMG tag inside it to behave */
+.article-image img {
+    border-radius: 16px !important;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Fix titles inside cards */
+.article-title, .article-content, .widget-title {
+    color: var(--text-main) !important;
+}
+
+/* =========================================
+   4. SIDEBAR CLEANUP
+   ========================================= */
+.sidebar header {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.sidebar .site-name, 
+.sidebar .site-description,
+.sidebar .menu-list li a,
+.sidebar .social-menu a {
+    color: var(--menu-text-static) !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8) !important;
+}
+
+.sidebar .menu-list li a:hover,
+.sidebar .menu-list li a.active {
+    color: var(--color-primary) !important;
+    background: transparent !important;
+}
+
+/* =========================================
+   5. REMOVE THE TOGGLE BUTTON
+   ========================================= */
+#darkModeToggle, .dark-mode-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* =========================================
+   6. LINK ACCENTS
+   ========================================= */
+.article-content a {
+    color: var(--color-primary) !important;
+}
