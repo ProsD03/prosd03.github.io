@@ -2,7 +2,7 @@
 title: "Hello World (Or: How I Learned to Stop Worrying and Love the Segfault)"
 description: A manifesto of broken code, melted plastic, and expensive hobbies.
 date: 2026-01-27
-image: hello-cover.jpg
+image: cover.jpg
 categories:
     - Meta
 ---

@@ -2,9 +2,9 @@
    1. GLOBAL FORCED DARK MODE
    ========================================= */
 :root, [data-scheme="light"], [data-scheme="dark"] {
-    --color-primary: #ff7b00 !important;       
+    --color-primary: #ff7b00 !important;
     --color-primary-rgb: 255, 123, 0 !important;
-    
+
     /* Dark Coffee/Warm Grey Card Background */
     --card-bg: rgba(44, 38, 32, 0.85) !important;
     --card-border: rgba(255, 255, 255, 0.1) !important;
@@ -23,7 +23,7 @@ body::before {
     background: url('/background.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(8px) brightness(0.5);
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 body {
@@ -33,10 +33,10 @@ body {
 /* =========================================
    3. THE CARDS (Frosted Glass)
    ========================================= */
-.widget, 
-.article-list article,          
-.article-list--compact article, 
-.main-article,                  
+.widget,
+.article-list article,
+.article-list--compact article,
+.main-article,
 .right-sidebar .widget {
     background-color: var(--card-bg) !important;
     backdrop-filter: blur(12px) !important;
@@ -56,10 +56,10 @@ body {
     /* Force the container to respect the rounded corners */
     border-radius: 16px !important;
     overflow: hidden !important;
-    
+
     /* If the theme forces negative margins (to touch the edges), 
        we keep them but ensure the radius applies to the result */
-    z-index: 1; 
+    z-index: 1;
 }
 
 /* We also force the IMG tag inside it to behave */
@@ -85,7 +85,7 @@ body {
     box-shadow: none !important;
 }
 
-.sidebar .site-name, 
+.sidebar .site-name,
 .sidebar .site-description,
 .sidebar .menu-list li a,
 .sidebar .social-menu a {
@@ -113,4 +113,35 @@ body {
    ========================================= */
 .article-content a {
     color: var(--color-primary) !important;
+}
+
+/* =========================================
+   9. SIDEBAR FAVICON FIX
+   ========================================= */
+/* Target the container that holds the emoji/image */
+.sidebar .avatar-container .emoji {
+    /* Reset text properties so they don't affect the image space */
+    font-size: 0 !important;
+    line-height: 0 !important;
+
+    /* Remove padding so the image touches the edges */
+    padding: 0 !important;
+
+    /* Ensure the container clips the image into a perfect circle */
+    overflow: hidden !important;
+    border-radius: 50% !important;
+
+    /* Optional: If your favicon has a transparent background,
+       you might want to keep the dark background circle.
+       If the favicon is a solid square, remove the line below. */
+    background-color: rgba(44, 38, 32, 0.90) !important;
+}
+
+/* Target the image itself to ensure it fills the container */
+.sidebar .avatar-container .emoji img {
+    /* Already set inline in config, but good to double-force here */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
 }
