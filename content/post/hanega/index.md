@@ -1,9 +1,8 @@
 ---
 title: "NeoHanega: Why you should do research before going down a rabbit hole"
 description: The story of a failed project, and a memento for the future.
-date: 2026-01-28
+date: 2026-03-28
 image: cover.jpg
-draft: true
 categories:
     - Meta
 ---
