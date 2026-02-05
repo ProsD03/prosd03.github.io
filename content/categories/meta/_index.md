@@ -1,7 +1,7 @@
 ---
 title: Meta
 description: Boring RL Updates, things about the blog itself, and anything that doesn't fit anywhere else.
-image: meta.jpg
+image: cover.jpg
 
 # Badge style
 style:
