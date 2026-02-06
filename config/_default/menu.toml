@@ -23,3 +23,11 @@
     [social.params]
         icon = "brand-linkedin"
 
+[[main]]
+identifier = "subscribe"
+name = "Newsletter"
+url = "https://newsletter.prosd.dev/"
+weight = 99        # Puts it at the bottom of the list
+
+    [main.params]
+        icon = "mail"
